@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class Search extends Component {
 	state = {
 		text: '',
 	};
 
+	static propTypes = {
+		searchUsers: PropTypes.func.isRequired,
+	};
+
 	onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		console.log(this.state.text);
+		// pass props up to App.js
+		this.props.searchUsers(this.state.text);
+		// clear form after submit
+		this.setState({ text: '' });
 	};
 
 	render() {
