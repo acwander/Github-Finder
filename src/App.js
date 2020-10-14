@@ -16,25 +16,6 @@ const App = () => {
 	const [loading, setLoading] = useState(false);
 	const [alert, setAlert] = useState(null);
 
-	// state = {
-	// 	users: [],
-	// 	user: {},
-	// 	repos: [],
-	// 	loading: false,
-	// 	alert: null,
-	// };
-
-	// async componentDidMount() {
-	// 	// set loading to true
-	// 	this.setState({ loading: true });
-	// 	// await api call to get users and assign to res
-	// 	const res = await axios.get(
-	// 		`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-	// 	);
-	// 	// set users to the returned data, set loading to false
-	// 	this.setState({ users: res.data, loading: false });
-	// }
-
 	// Search Github users
 	const searchUsers = async (text) => {
 		setLoading(true);
