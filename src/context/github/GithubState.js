@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import GithubContact from './githubContext';
+import GithubContext from './githubContext';
 import GithubReducer from './githubReducer';
 import {
 	SEARCH_USERS,
@@ -9,7 +9,6 @@ import {
 	GET_USER,
 	GET_REPOS,
 } from '../types';
-import githubContext from './githubContext';
 
 const GithubState = (props) => {
 	const initialState = {
@@ -72,7 +71,7 @@ const GithubState = (props) => {
 	};
 
 	return (
-		<githubContext.Provider
+		<GithubContext.Provider
 			value={{
 				users: state.users,
 				user: state.user,
@@ -85,7 +84,7 @@ const GithubState = (props) => {
 			}}
 		>
 			{props.children}
-		</githubContext.Provider>
+		</GithubContext.Provider>
 	);
 };
 
